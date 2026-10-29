@@ -16,12 +16,15 @@ Built with **Phaser 3**, **TypeScript**, and **Vite**.
 - **Multiple-choice answers** — pick by key or click; four options, always one correct.
 - **Tug-of-war rope physics** — correct answers pull a shared rope; it's clamped so it can never overshoot a win.
 - **Scoring with combo streaks** — consecutive correct answers earn bonus points.
-- **Countdown, victory animation, confetti, rematch & menu.**
+- **Juice & feel** — screen shake on pulls, particle bursts on correct answers,
+  rope sag + tension glow, pull/strain character animations, countdown, victory
+  flash, confetti, rematch & menu.
 
-> **Note on visuals:** this is the playable MVP. Characters are currently clean
-> procedurally-drawn placeholders (no external assets required to run). Polished
-> character art, animation, and juice are the focus of the next milestone — the
-> gameplay, input, AI, scoring, and win logic are complete and verified.
+> **Visuals:** every graphic is generated procedurally at runtime (no external
+> asset files, no art pipeline) — shaded arcade-mascot characters, a braided
+> rope, a themed arena with team zones and boundary posts, and consistent
+> typography. This keeps the repo tiny and dependency-light while still looking
+> like a finished arcade game.
 
 ## Gameplay
 
@@ -95,11 +98,11 @@ pnpm test
 
 ## Roadmap
 
-- [x] Playable MVP: full gameplay loop, 2P + AI, difficulty, countdown, scoring, win, rematch
+- [x] Playable game: full loop, 2P + AI, difficulty, countdown, scoring, win, rematch
 - [x] Automated tests for math, validation, rope, win conditions, AI, scoring
-- [ ] Polished character art + animations (idle, pull, strain, win/lose)
+- [x] Polished procedural visuals: shaded characters, pull/strain animation, themed arena
+- [x] Juicy feedback: screen shake, particle bursts, rope sag + tension glow, victory confetti
 - [ ] Sound effects and music
-- [ ] Juicy feedback: screen shake, particles, rope tension visuals
 - [ ] Mobile / touch layout
 - [ ] itch.io release build
 
