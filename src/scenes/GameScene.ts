@@ -196,7 +196,7 @@ export class GameScene extends Phaser.Scene {
       const bx = cx - 201 + i * 134;
       const btn = this.makeAnswerButton(bx, 636, isAi ? "" : keys[i], fillDark);
       if (!isAi) {
-        btn.setInteractive(new Phaser.Geom.Rectangle(-58, -32, 116, 64), Phaser.Geom.Rectangle.Contains);
+        btn.setInteractive(new Phaser.Geom.Rectangle(0, 0, 116, 64), Phaser.Geom.Rectangle.Contains);
         btn.on("pointerover", () => this.tweens.add({ targets: btn, scale: 1.06, duration: 100 }));
         btn.on("pointerout", () => this.tweens.add({ targets: btn, scale: 1, duration: 100 }));
         btn.on("pointerdown", () => this.onAnswer(side, i));

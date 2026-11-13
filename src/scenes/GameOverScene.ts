@@ -100,7 +100,7 @@ export class GameOverScene extends Phaser.Scene {
       .text(0, 0, label, { fontFamily: FONTS.ui, fontSize: "26px", color: textColor, fontStyle: "bold" })
       .setOrigin(0.5);
     const c = this.add.container(x, y, [shadow, rect, text]).setSize(250, 70);
-    c.setInteractive(new Phaser.Geom.Rectangle(-125, -35, 250, 70), Phaser.Geom.Rectangle.Contains);
+    c.setInteractive(new Phaser.Geom.Rectangle(0, 0, 250, 70), Phaser.Geom.Rectangle.Contains);
     c.on("pointerover", () => this.tweens.add({ targets: c, scale: 1.07, duration: 120 }));
     c.on("pointerout", () => this.tweens.add({ targets: c, scale: 1, duration: 120 }));
     c.on("pointerdown", onClick);

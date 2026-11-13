@@ -117,7 +117,7 @@ export class MenuScene extends Phaser.Scene {
       .text(0, 0, label, { fontFamily: FONTS.ui, fontSize: "24px", color: "#ffffff", fontStyle: "bold" })
       .setOrigin(0.5);
     const c = this.add.container(x, y, [shadow, rect, text]).setSize(w, h);
-    c.setInteractive(new Phaser.Geom.Rectangle(-w / 2, -h / 2, w, h), Phaser.Geom.Rectangle.Contains);
+    c.setInteractive(new Phaser.Geom.Rectangle(0, 0, w, h), Phaser.Geom.Rectangle.Contains);
     c.on("pointerover", () => this.tweens.add({ targets: c, scale: c.getData("isStart") ? 1.1 : 1.06, duration: 120 }));
     c.on("pointerout", () => this.tweens.add({ targets: c, scale: 1, duration: 120 }));
     c.on("pointerdown", onClick);
