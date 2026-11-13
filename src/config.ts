@@ -1,6 +1,16 @@
 export const GAME_WIDTH = 1280;
 export const GAME_HEIGHT = 720;
 
+/**
+ * Render scale. The game is laid out in a fixed 1280x720 logical space, but the
+ * canvas is allocated at device resolution (capped at 2x) and every camera is
+ * zoomed by this factor, so text and vector art stay sharp on retina screens.
+ */
+export const RES = Math.min(Math.max(window.devicePixelRatio || 1, 1), 2);
+
+/** Generated textures are drawn at this supersample factor and shown at 1/TEX_SCALE. */
+export const TEX_SCALE = 2;
+
 export const COLORS = {
   bgTop: 0x202a52,
   bgBottom: 0x0b0f1f,
@@ -33,3 +43,10 @@ export const FONTS = {
   // Rounded, friendly system stack with fallbacks that exist on macOS/Win/Linux.
   ui: "'Trebuchet MS', 'Segoe UI', system-ui, -apple-system, sans-serif",
 };
+
+export type Team = "left" | "right";
+
+export const TEAM = {
+  left: { body: COLORS.left, dark: COLORS.leftDark, light: COLORS.leftLight, hex: "#4fa3ff" },
+  right: { body: COLORS.right, dark: COLORS.rightDark, light: COLORS.rightLight, hex: "#ff6b5c" },
+} as const;
